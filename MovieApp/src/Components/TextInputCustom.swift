@@ -1,5 +1,5 @@
 //
-//  TextInput.swift
+//  TextInputCustom.swift
 //  MovieApp
 //
 //  Created by Nguyễn Anh Tuấn on 15/4/25.
@@ -22,29 +22,38 @@ struct DefaultTextInputModifier: ViewModifier {
 
 struct TextInputCustom<CustomVM>: View where CustomVM: ViewModifier {
     @Binding private var textValue: String
-    private let placeHolder: String
-    private let placeHolderColor: Color
-    private let textInputColor: Color
-    private let modifier: CustomVM?
+    let placeHolder: String
+    let placeHolderColor: Color
+    let textInputColor: Color
+    let icon: IconView?
+    let modifier: CustomVM?
 
     init(
         textValue: Binding<String>,
         placeHolder: String = "",
         placeHolderColor: Color = colorThemes.colorSecondary,
         textInputColor: Color = colorThemes.colorSecondary,
+        icon: IconView? = nil,
         modifier: CustomVM? = nil
     ) {
         self._textValue = textValue
         self.placeHolder = placeHolder
         self.placeHolderColor = placeHolderColor
         self.textInputColor = textInputColor
+        self.icon = icon
         self.modifier = modifier
+
     }
 
     var body: some View {
         let textField = HStack {
-            Image(systemName: "magnifyingglass")
-                .foregroundStyle(colorThemes.colorSecondary)
+            Group {
+                if let icon = icon {
+                    icon
+                } else {
+                    EmptyView()
+                }
+            }
             TextField(
                 "",
                 text: $textValue,
@@ -62,20 +71,5 @@ struct TextInputCustom<CustomVM>: View where CustomVM: ViewModifier {
             }
         }
 
-    }
-}
-
-extension TextInputCustom where CustomVM == EmptyModifier {
-    init(
-        _ textValue: Binding<String>,
-        placeHolder: String = "",
-        placeHolderColor: Color = colorThemes.colorSecondary,
-        textInputColor: Color = colorThemes.colorSecondary
-    ) {
-        self._textValue = textValue
-        self.placeHolder = placeHolder
-        self.placeHolderColor = placeHolderColor
-        self.textInputColor = textInputColor
-        self.modifier = EmptyModifier()
     }
 }

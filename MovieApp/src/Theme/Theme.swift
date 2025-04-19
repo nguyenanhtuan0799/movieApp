@@ -40,8 +40,23 @@ extension UIScreen{
    static let screenSize = UIScreen.main.bounds.size
 }
 
-struct Themes {
-    static let connerRadius = CGFloat(10)
+struct radiusThemes {
+    static let connerRadiusPrimary = CGFloat(8)
     static let connerRadiusFull = CGFloat(99)
     static let connerRadiusInput = CGFloat(12)
+}
+
+struct paddingThemes{
+    static let padding_s = CGFloat(4)
+    static let padding_m = CGFloat(8)
+    static let padding_l = CGFloat(16)
+    static let padding_H_primary = CGFloat(24)
+}
+
+struct colorThemes{
+    static let colorSecondary = Color.init(hex:"#a3a3a3")
+    static let colorText = Color.white
+    static let colorBgPrimary = Color.init(hex:"#0a0a0a")
+    static let colorPrimary =  Color.init(hex:"#d12f26")
+    static let colorBgGray =  Color.init(hex:"#1a191c")
 }
