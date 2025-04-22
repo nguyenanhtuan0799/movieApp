@@ -29,7 +29,8 @@ struct ContanstData {
             isSave: false,
             yearMovie: "2024",
             rate: "2",
-            isHot: false
+            isHot: false,
+            timeContinue:"01:20:22"
         ),
         MovieModel(
             id: "2",
@@ -42,7 +43,8 @@ struct ContanstData {
             isSave: false,
             yearMovie: "2024",
             rate: "2",
-            isHot: false
+            isHot: false,
+            timeContinue:"00:40:22"
         ),
         MovieModel(
             id: "3",
@@ -55,7 +57,8 @@ struct ContanstData {
             isSave: false,
             yearMovie: "2024",
             rate: "2",
-            isHot: false
+            isHot: false,
+            timeContinue:"00:01:00"
         )
     ]
 

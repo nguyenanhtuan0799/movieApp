@@ -59,6 +59,7 @@ struct TextInputCustom<CustomVM>: View where CustomVM: ViewModifier {
                 text: $textValue,
                 prompt: Text(placeHolder)
                     .foregroundColor(placeHolderColor)
+                    .font(Fonts.nunitoRegular(16))
             )
             .foregroundColor(textInputColor)
         }

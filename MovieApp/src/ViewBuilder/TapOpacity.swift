@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct OnTapOpacity<Content: View>: View {
+struct TapOpacity<Content: View>: View {
     let action: () -> Void
     let content: () -> Content
 

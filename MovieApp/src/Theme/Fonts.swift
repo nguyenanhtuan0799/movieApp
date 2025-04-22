@@ -5,18 +5,23 @@
 //  Created by Nguyễn Anh Tuấn on 24/1/25.
 //
 
+import Foundation
 import SwiftUI
 
+
+
 struct Fonts {
-    static func sourGummyRegular(size:CGFloat) -> Font{
-        return Font.custom("SourGummy-Black_Regular", size: size)
+    private static let sizeDf : CGFloat = 16
+    
+    static func nunitoRegular(_ size: CGFloat? = sizeDf) -> Font{
+        return Font.custom("Nunito-Regular", size: size ?? sizeDf)
     }
 
-    static func sourGummySemiBold(size:CGFloat) -> Font{
-        return Font.custom("SourGummy-Black_SemiBold", size: size)
+    static func nunitoSemiBold(_ size: CGFloat? = sizeDf) -> Font{
+        return Font.custom("Nunito-SemiBold", size: size ?? sizeDf)
     }
 
-    static func sourGummyBold(size:CGFloat) -> Font{
-        return Font.custom("SourGummy-Black_Bold", size: size)
+    static func nunitoBold(_ size: CGFloat? = sizeDf) -> Font{
+        return Font.custom("Nunito-Bold", size: size ?? sizeDf)
     }
 }

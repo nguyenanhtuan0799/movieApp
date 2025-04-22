@@ -8,6 +8,7 @@
 import Foundation
 
 struct Env {
-    static let ApiUrl: String = Bundle.main.infoDictionary?["API_URL"] as? String ?? ""
-    static let ApiKeyMovie: String = Bundle.main.infoDictionary?["API_KEY_MOVIE"] as? String ?? ""
+    static let ApiUrl: String = (Bundle.main.infoDictionary?["API_URL"] as? String)?.replacingOccurrences(of: "\\", with: "") ?? "ko dc"
+    static let ApiKeyMovie: String = (Bundle.main.infoDictionary?["API_KEY_MOVIE"] as? String)?.replacingOccurrences(of: "\\", with: "") ?? "ko dc"
 }
+

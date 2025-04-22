@@ -49,7 +49,11 @@ extension HomeScreen {
         FilterMovie(filters: ContanstData.filterMoiveByModel)
     }
     fileprivate func renderTabMovie() -> some View {
-        TabMovie(typeTab: .watch, title: "Continue Watch")
+        TabMovie(
+            typeTab: .watch,
+            title: "Continue Watch",
+            movies: ContanstData.movies
+        )
     }
 }
 

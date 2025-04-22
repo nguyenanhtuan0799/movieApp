@@ -9,18 +9,18 @@ import Foundation
 import SwiftUI
 
 struct FilterMovie: View {
-    let filters: [FilterModel]
+    let filters: [CategoryModel]
 
-    @State private var currentSelected: FilterModel
+    @State private var currentSelected: CategoryModel
 
-    init(filters: [FilterModel]) {
+    init(filters: [CategoryModel]) {
         self.filters = filters
         _currentSelected = State(initialValue: filters.first!)
     }
 
     var body: some View {
         ScrollView([.horizontal]) {
-            HStack(alignment: .center, spacing: 16) {
+            HStack(alignment: .center, spacing: 12) {
                 ForEach(filters) {
                     f in
                     HStack(spacing: 4) {
@@ -36,6 +36,7 @@ struct FilterMovie: View {
                             }
                         }
                         Text(f.title)
+                            .font(Fonts.nunitoRegular())
                             .foregroundColor(
                                 currentSelected.id == f.id
                                     ? colorThemes.colorText
